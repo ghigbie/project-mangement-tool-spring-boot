@@ -19,9 +19,8 @@ public class ProjectController {
     }
 
     @PostMapping("/save")
-    public String createProjectModel(Model model){
+    public String createProjectModel(Project project, Model model) {
         return "save-project";
     }
-
 
 }
