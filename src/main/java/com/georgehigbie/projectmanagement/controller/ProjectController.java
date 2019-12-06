@@ -26,7 +26,7 @@ public class ProjectController {
     @PostMapping("/save")
     public String createProjectModel(Project project, Model model) {
         proRepo.save(project);
-        return "redirect:/new";
+        return "redirect:/projects/new"; //use redirect to prevent duplicate submissions
     }
 
 }
