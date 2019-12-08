@@ -1,6 +1,8 @@
 package com.georgehigbie.projectmanagement.controller;
 
+import com.georgehigbie.projectmanagement.dao.EmployeeRepository;
 import com.georgehigbie.projectmanagement.dao.ProjectRepository;
+import com.georgehigbie.projectmanagement.entities.Employee;
 import com.georgehigbie.projectmanagement.entities.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,10 +16,14 @@ public class HomeController {
 
     @Autowired
     ProjectRepository proRepo;
+    EmployeeRepository employeeRepo;
 
     @GetMapping("/")
     public String displayHome(Model model){
         List<Project> projects = proRepo.findAll();
+        List<Employee> employee = employeeRepo.findAll();
+        model.addAttribute("aProject", projects);
+        model.addAttribute("anEmployee", employee);
         return "home";
     }
 }
