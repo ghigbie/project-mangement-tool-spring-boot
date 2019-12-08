@@ -15,7 +15,38 @@
 <body>
 
 <div class="container">
-    Moo Employee saved
+    <h4>Current Projects</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>Project Stage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="aProject : ${project}">
+                <td th:text="${aProject.name}"/>
+                <td th:text="${aProject.status}"/>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Employee First Name</th>
+                <th>Employee Last name</th>
+                <th>Employee Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="anEmployee : ${employee}">
+                <td th:text="${employee.firstName}"/>
+                <td th:text="${employee.lastName}"/>
+                <td th:text="${employee.email}"/>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 </body>
