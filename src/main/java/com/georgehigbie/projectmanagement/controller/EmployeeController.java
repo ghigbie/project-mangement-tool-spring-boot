@@ -35,7 +35,7 @@ public class EmployeeController {
     public String listAllEmployees(Model model){
         List<Employee> employee = employeeRepo.findAll();
         model.addAttribute("employeesList", employee);
-        return "emloyees/list-employees";
+        return "employees/list-employees";
     }
 
 
