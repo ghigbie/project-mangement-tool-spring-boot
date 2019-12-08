@@ -31,6 +31,7 @@ public class ProjectController {
         return "redirect:/projects/new"; //use redirect to prevent duplicate submissions
     }
 
+    @GetMapping("/all")
     public String listAllProjects(Model model){
         List<Project> project = proRepo.findAll();
         model.addAttribute("projectsList", project);
