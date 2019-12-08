@@ -34,16 +34,16 @@
     <table>
         <thead>
             <tr>
-                <th>Employee First Name</th>
-                <th>Employee Last name</th>
-                <th>Employee Email</th>
+                <th>First Name</th>
+                <th>Last name</th>
+                <th>Email</th>
             </tr>
         </thead>
         <tbody>
-            <tr th:each="anEmployee : ${employeesList}">
-                <td th:text="${anEmployee.firstName}"/>
-                <td th:text="${anEmployee.lastName}"/>
-                <td th:text="${anEmployee.email}"/>
+            <tr th:each="aEmployee : ${employeesList}">
+                <td th:text="${aEmployee.firstName}"/>
+                <td th:text="${aEmployee.lastName}"/>
+                <td th:text="${aEmployee.email}"/>
             </tr>
         </tbody>
     </table>
