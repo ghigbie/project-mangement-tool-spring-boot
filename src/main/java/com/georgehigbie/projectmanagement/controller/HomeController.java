@@ -22,8 +22,8 @@ public class HomeController {
     public String displayHome(Model model){
         List<Project> projects = proRepo.findAll();
         List<Employee> employee = employeeRepo.findAll();
-        model.addAttribute("aProject", projects);
-        model.addAttribute("anEmployee", employee);
+        model.addAttribute("projectsList", projects);
+        model.addAttribute("employeesList", employee);
         return "home";
     }
 }
