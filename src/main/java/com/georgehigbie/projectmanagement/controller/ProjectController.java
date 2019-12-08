@@ -29,4 +29,5 @@ public class ProjectController {
         return "redirect:/projects/new"; //use redirect to prevent duplicate submissions
     }
 
+
 }
