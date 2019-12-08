@@ -16,13 +16,16 @@ public class HomeController {
 
     @Autowired
     ProjectRepository proRepo;
+
+    @Autowired
     EmployeeRepository employeeRepo;
 
     @GetMapping("/")
     public String displayHome(Model model){
         List<Project> projects = proRepo.findAll();
-        List<Employee> employee = employeeRepo.findAll();
         model.addAttribute("projectsList", projects);
+
+        List<Employee> employee = employeeRepo.findAll();
         model.addAttribute("employeesList", employee);
         return "home";
     }
