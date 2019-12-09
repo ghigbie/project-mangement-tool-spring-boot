@@ -4,6 +4,10 @@
 <head th:replace="layouts ::  header"></head>
 <body>
     <nav th:replace="layouts :: navbar"></nav>
+    <a th:href="@{/projects/new}"
+       class="btn btn-primary btn-sm mb-3">
+       Add new Project
+    </a>
     <table>
         <thead>
             <tr>
