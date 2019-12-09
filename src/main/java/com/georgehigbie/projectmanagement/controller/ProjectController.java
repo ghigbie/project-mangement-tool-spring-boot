@@ -18,6 +18,13 @@ public class ProjectController {
     @Autowired
     ProjectRepository proRepo;
 
+    @GetMapping
+    public String displayProjects(Model model){
+        List<Project> projects = proRepo.findAll();
+        model.addAttribute("projects", projects);
+        return "projects/list-projects";
+    }
+
     @GetMapping("/new")
     public String displayProjectForm(Model model) {
         Project project = new Project();
@@ -30,13 +37,5 @@ public class ProjectController {
         proRepo.save(project);
         return "redirect:/projects/new"; //use redirect to prevent duplicate submissions
     }
-
-    @GetMapping("/all")
-    public String listAllProjects(Model model){
-        List<Project> project = proRepo.findAll();
-        model.addAttribute("projectsList", project);
-        return "projects/list-projects";
-    }
-
 
 }
