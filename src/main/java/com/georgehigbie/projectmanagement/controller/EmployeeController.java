@@ -18,6 +18,13 @@ public class EmployeeController {
     @Autowired
     EmployeeRepository employeeRepo;
 
+    @GetMapping
+    public String displayEmployees(Model model){
+        List<Employee> employees = employeeRepo.findAll();
+        model.addAttribute("employees", employees);
+        return "employees/list-employees";
+    }
+
     @GetMapping("/new")
     public String displayEmployeeForm(Model model){
         Employee employee = new Employee();
@@ -30,13 +37,5 @@ public class EmployeeController {
         employeeRepo.save(employee);
         return "redirect:/employees/new";
     }
-
-    @GetMapping("/all")
-    public String listAllEmployees(Model model){
-        List<Employee> employee = employeeRepo.findAll();
-        model.addAttribute("employeesList", employee);
-        return "employees/list-employees";
-    }
-
 
 }
