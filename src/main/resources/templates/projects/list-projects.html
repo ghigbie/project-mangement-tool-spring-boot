@@ -4,25 +4,27 @@
 <head th:replace="layouts ::  header"></head>
 <body>
     <nav th:replace="layouts :: navbar"></nav>
-    <a th:href="@{/projects/new}"
-       class="btn btn-primary btn-sm mb-3">
-       Add new Project
-    </a>
-    <table>
-        <thead>
-            <tr>
-                <th>Project Name</th>
-                <th>Stage</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="aProject : ${projects}">
-                <td th:text="${aProject.name}"></td>
-                <td th:text="${aProject.stage}"></td>
-                <td th:text="${aProject.description}"></td>
-            </tr>
-        </tbody>
-    </table>
+    <main class="container">
+        <a th:href="@{/projects/new}"
+           class="btn btn-primary btn-sm mb-3">
+           Add new Project
+        </a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Stage</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="aProject : ${projects}">
+                    <td th:text="${aProject.name}"></td>
+                    <td th:text="${aProject.stage}"></td>
+                    <td th:text="${aProject.description}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 </body>
 </html>
